@@ -19,6 +19,10 @@ export default function StartGameScreen() {
         setText('');
     }
 
+    const startGame = () => {
+        console.log(guessNum)
+    }
+
     const confirmButton = () => {
         const textNum =  parseInt(textNumber);
         console.log(textNum)
@@ -42,9 +46,12 @@ export default function StartGameScreen() {
 
     if (confirm){
         selectedNum = (
-            <View style={{marginVertical: 20}}>
+            <View style={{marginVertical: 40}}>
                 <Card style={styles.numArea}>
-                <Text>Number you entered was : {guessNum}</Text>
+                <Number guessNum={guessNum} />
+                <View style={styles.launchGamBtn}>
+                <Button title ="start Game" onPress={startGame} />
+                </View>
             </Card>
 
             </View>
@@ -97,9 +104,9 @@ const styles =  StyleSheet.create({
         
     },
     numArea: {
-        padding: 10,
+        padding: 40,
         width: 240,
-        backgroundColor :'grey',
+        backgroundColor :'whitesmoke',
         textAlign:'center',
         
     },
@@ -118,6 +125,10 @@ const styles =  StyleSheet.create({
         padding: 24,
         width:200,
         backgroundColor: 'white'
+    },
+
+    launchGamBtn: {
+        marginTop: 20
     }
   
 

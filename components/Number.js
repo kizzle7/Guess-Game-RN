@@ -4,7 +4,9 @@ import {View, Text, StyleSheet} from 'react-native'
 export default function Number(props) {
     return (
         <View style={styles.container}>
-            <Text>{props.children}</Text>
+            <View style={styles.numArea}>
+            <Text style={styles.num}>{props.guessNum}</Text>
+            </View>
         </View>
             
             )
@@ -12,11 +14,25 @@ export default function Number(props) {
 
 const styles = StyleSheet.create({
     container : {
-        borderColor : 'black',
-        padding: 20,
-        textAlign: 'center',
-        alignItems: 'center'
+        justifyContent: 'center',
+        alignItems: 'center',
+    
+    },
+
+    numArea: {
+        borderStyle: 'solid',
+        borderColor: 'black',
+        borderRadius: 15,
+        borderWidth: 2,
+        padding:2,
         
+    },
+
+    num:{
+        color: '#000',
+        fontSize:30,
+        fontWeight: 'bold',
+        padding: 10
     }
   
 })
