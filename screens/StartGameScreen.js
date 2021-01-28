@@ -5,7 +5,7 @@ import Card from  '../components/Card'
 import Input from '../components/Input'
 import Number from  '../components/Number'
 
-export default function StartGameScreen() {
+export default function StartGameScreen(props) {
     const [textNumber, setText] =  useState('');
     const [confirm, setConfirmed] =  useState('');
     const [guessNum, setNumber] =  useState('');
@@ -20,7 +20,7 @@ export default function StartGameScreen() {
     }
 
     const startGame = () => {
-        console.log(guessNum)
+        props.startGameFunc(guessNum)
     }
 
     const confirmButton = () => {
@@ -48,7 +48,7 @@ export default function StartGameScreen() {
         selectedNum = (
             <View style={{marginVertical: 40}}>
                 <Card style={styles.numArea}>
-                <Number guessNum={guessNum} />
+                <Number>{guessNum}</Number>
                 <View style={styles.launchGamBtn}>
                 <Button title ="start Game" onPress={startGame} />
                 </View>

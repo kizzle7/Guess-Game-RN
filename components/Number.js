@@ -5,7 +5,7 @@ export default function Number(props) {
     return (
         <View style={styles.container}>
             <View style={styles.numArea}>
-            <Text style={styles.num}>{props.guessNum}</Text>
+            <Text style={styles.num}>{props.children}</Text>
             </View>
         </View>
             
